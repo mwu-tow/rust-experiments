@@ -8,6 +8,11 @@ on:
     types: [labeled]
 
   workflow_dispatch:
+    inputs:
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: false 
+        type: boolean 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,3 +33,5 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: console.log(process.env)
+    - run: echo ${{ inputs.print_tags }}
+    - run: echo ${{ inputs.print_tags && true }}
