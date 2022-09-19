@@ -36,3 +36,5 @@ jobs:
         script: console.log(process.env)
     - run: echo ${{ inputs.print_tags }}
     - run: echo ${{ inputs.print_tags && true }}
+    - run: echo ${{ true && inputs.print_tags }}
+    - run: echo ${{ true && github.event.label.name == 'duplicate' }}
