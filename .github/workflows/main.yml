@@ -32,6 +32,7 @@ jobs:
         script: |
           const fs = require("fs/promises")
           await fs.writeFile("output.json", JSON.stringify(github))
+          console.log(github)
     - name: View context attributes
       uses: actions/github-script@v6
       with:
