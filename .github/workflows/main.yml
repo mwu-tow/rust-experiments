@@ -29,7 +29,9 @@ jobs:
     - name: Store context
       uses: actions/github-script@v6
       with:
-        script: await fs.writeFile("output.json", JSON.stringify(github))
+        script: |
+          const fs = require("fs/promises")
+          await fs.writeFile("output.json", JSON.stringify(github))
     - name: View context attributes
       uses: actions/github-script@v6
       with:
