@@ -8,6 +8,6 @@ on:
 jobs:
   main_job:
     runs-on:
-      - MacOS
+      - macos-latest
     steps:
       - run: ${{ inputs.command }}
