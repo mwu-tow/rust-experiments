@@ -1,0 +1,13 @@
+name: "CLI command"
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "Command to run"
+        
+jobs:
+  main_job:
+    runs-on:
+      - MacOS
+    steps:
+      - run: ${{ inputs.command }}
